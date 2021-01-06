@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'scss/themes';
+
+// framework component styles
+@import '~@nebular/theme/styles/globals';
+
+// install the framework styles
+@include nb-install() {
+  @include nb-theme-global();
+};
+
+@import "../node_modules/ag-grid-community/dist/styles/ag-grid.css";
+@import "../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css";

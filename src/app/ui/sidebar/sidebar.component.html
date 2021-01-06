@@ -1,0 +1,10 @@
+<ng-container>
+    <nb-card size="small">
+        <nb-list>
+            <nb-list-item *ngFor="let p of programs">
+                <a [href]="p.id">{{ p.name }}</a>
+            </nb-list-item>
+        </nb-list>
+    </nb-card>
+</ng-container>
+
