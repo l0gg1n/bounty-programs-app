@@ -30,9 +30,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [
-              
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -122,6 +120,10 @@
               "devServerTarget": "bounty-programs-app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
