@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  readonly programs: any[] = [{ id: 'hc1', name: 'HackerOne'}];
+  readonly programs: any[] = [
+    { id: 'hc1', name: 'HackerOne'},
+    { id: 'bc', name: 'BugCrowd'}
+  ];
 
   constructor() { }
 

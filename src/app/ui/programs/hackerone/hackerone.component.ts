@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HackerOneDataService } from 'src/app/services/hacker-one-data.service';
+import { HackerOneDataService } from 'src/app/services/hackerone/hacker-one-data.service';
 
 @Component({
   selector: 'app-hackerone',
@@ -9,17 +9,16 @@ import { HackerOneDataService } from 'src/app/services/hacker-one-data.service';
 export class HackeroneComponent implements OnInit {
 
   public columnDefs = [
-    { field: 'name', sortable: true, filter: true },
-    { field: 'offers_bounties', headerName: 'Bounties?', filter: true, sortable: true,
+    { field: 'name', sortable: true, filter: true, width: 300 },
+    { field: 'offers_bounties', headerName: 'Bounties?', filter: true, sortable: true, width: 120,  cellStyle: {textAlign: 'center' },
       cellRenderer: (d) => {
-         return d.value ? '<font color=green>&#128512;</font>' : '<font color=red>&#128530;</font>'
+         return d.value ? '<div>&#128512</div>' : ''
       }
      },
-    { field: 'num_targets', headerName: 'Target Cnt', sortable: true },
-    { field: 'response_efficiency_percentage', headerName: 'Response Eff' , sortable: true },
+    { field: 'num_targets', headerName: 'Target Cnt', sortable: true, width: 120,  cellStyle: {textAlign: 'center' } },
     {
       field: 'id',
-      headerName: 'Link',
+      headerName: 'Link', width: 300,
       cellRenderer: (d) => { 
         const p = this.rowData.find(x => x.id == d.value);
         return  `<a target='_blank' href="${p.url}" >${p.name}</a>` 
@@ -28,7 +27,6 @@ export class HackeroneComponent implements OnInit {
   ];
 
   public rowData = []
-      
 
   constructor(private hackerOne: HackerOneDataService) { }
 
@@ -44,7 +42,7 @@ export class HackeroneComponent implements OnInit {
             .filter(x => x.num_targets > 0)
     
           console.log('open', this.rowData);
-      })
+      });
   }
 
 }

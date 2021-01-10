@@ -7,12 +7,13 @@ import { NbCardModule, NbListModule } from '@nebular/theme';
 import { RouterModule } from '@angular/router';
 import { HackeroneComponent } from './programs/hackerone/hackerone.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { BugcrowdComponent } from './programs/bugcrowd/bugcrowd.component';
 
 @NgModule({
   declarations: [
     SidebarComponent, 
     HeaderComponent, 
-    HomeComponent, HackeroneComponent
+    HomeComponent, HackeroneComponent, BugcrowdComponent
   ],
   imports: [
     CommonModule,
