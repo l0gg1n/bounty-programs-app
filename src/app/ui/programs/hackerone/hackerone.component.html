@@ -1,9 +1,31 @@
-<h6>HackerOne Programs</h6>
+<h6>HackerOne</h6>
+<nb-tabset>
+    <nb-tab tabTitle="Programs" [badgeText]="programsRowData.length">
+        <ag-grid-angular
+            style="width: 100%;" 
+            class="ag-theme-alpine data-grid"
+            [rowData]="programsRowData"
+            [columnDefs]="programsColDefs"
+        >
+        </ag-grid-angular>
+    </nb-tab>
+    <nb-tab tabTitle="Targets" [badgeText]="targetsRowData.length">
+        <ag-grid-angular
+            style="width: 100%;" 
+            class="ag-theme-alpine data-grid"
+            [rowData]="targetsRowData"
+            [columnDefs]="targetsColDefs"
+         ></ag-grid-angular>
+    </nb-tab>
+    <nb-tab tabTitle="Wildcard Targes that Pay" [badgeText]="wildCardsThatPay.length">
+        <ag-grid-angular
+            style="width: 100%;" 
+            class="ag-theme-alpine data-grid"
+            [rowData]="wildCardsThatPay"
+            [columnDefs]="targetsColDefs"
+         ></ag-grid-angular>
+    </nb-tab>
 
-<ag-grid-angular
-    style="width: 100%;" 
-    class="ag-theme-alpine data-grid"
-    [rowData]="rowData"
-    [columnDefs]="columnDefs"
->
-</ag-grid-angular>
+
+</nb-tabset>
+
