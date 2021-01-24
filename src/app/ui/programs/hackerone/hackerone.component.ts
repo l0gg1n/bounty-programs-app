@@ -58,6 +58,7 @@ export class HackeroneComponent implements OnInit {
 
   public programsRowData = [];
   public targetsRowData = [];
+  public wildCardsThatPay = [];
 
   constructor(private hackerOne: HackerOneDataService) { }
 
@@ -90,6 +91,10 @@ export class HackeroneComponent implements OnInit {
             );
         this.targetsRowData = targets.reduce((acc, value) => acc.concat(value), []).sort((a, b) => a.program > b.program ? 1 : -1)
         console.log('targets', this.targetsRowData);    
+
+        this.wildCardsThatPay = this.targetsRowData.filter(x => {
+          return x.bounty && x.type === 'URL' && x.id.includes('*');
+        });
       });
   }
 
